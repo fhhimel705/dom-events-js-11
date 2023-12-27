@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event-summary</title>
+</head>
+
+<body>
+    <h1>Final DOM event handalers</h1>
+    <h2 id="changeText">Default Text</h2>
+    <button onclick="handleOnClick()">Handle event by Onclick Function</button>
+    <button id="eventClick">Handle event by add Event Listner</button>
+    <p id="changeP">Default input text</p>
+    <input type="text" id="input-field">
+    <button id="btn-update">Update</button>
+
+    <script>
+        // option 1
+        function handleOnClick() {
+            let changeText = document.getElementById('changeText');
+            changeText.innerText = 'Text changed by onClick function';
+        }
+
+        // option 2
+        let eventClick = document.getElementById('eventClick');
+        eventClick.addEventListener('click', function () {
+            document.getElementById('changeText').innerText = 'Text changed by event handaler function';
+        })
+        // opton 2 : recap
+        document.getElementById('btn-update').addEventListener('click', function () {
+            const inputField = document.getElementById('input-field');
+            const P = document.getElementById('changeP');
+            // inputField.value = P.innerText;
+            P.innerText = inputField.value;
+            inputField.value = '';
+        })
+
+
+
+    </script>
+</body>
+
+</html>

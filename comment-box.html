@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Please add your comment</h1>
+    <section id="comment">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem esse quidem obcaecati. Voluptas, ipsa hic?</p>
+        <p>Odio cumque reiciendis laboriosam officia? Magni adipisci quia omnis nisi dolores quam labore vero dolorem!</p>
+        <p>Omnis maxime architecto rem accusantium, eaque aliquid hic autem odio aspernatur saepe nihil, cum sit?</p>
+    </section>
+    <textarea name="" id="input-comment" cols="50" rows="5"></textarea>
+    <button id="add-comment">Comment</button>
+    <script>
+        // add event listner to the comment button .
+        document.getElementById('add-comment').addEventListener('click', function(){
+            // declare a var for input-comment.
+            const inputComment = document.getElementById('input-comment');
+            // create a p tag where we can store the comment
+            let p = document.createElement('p');
+            // assign the input comment into the the p.
+            p.innerText = inputComment.value;
+            // appendchild p to the parent node.
+            document.getElementById('comment').appendChild(p);
+            // clear the text area or the input comment.
+            inputComment.value= '';
+
+        })
+
+    </script>
+</body>
+</html>

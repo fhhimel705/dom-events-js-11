@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summary</title>
+</head>
+
+<body>
+    <h1>Summary of event handalers</h1>
+    <button onclick="makeOrange()">make orange</button>
+    <button id="make-green">make green</button>
+    <input type="text" id="input-field">
+    <script>
+        // option 1
+        function makeOrange() {
+            document.body.style.backgroundColor = 'orange';
+        }
+        // option 2
+        document.getElementById('make-green').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'green';
+        })
+        // keyup event
+        document.getElementById('input-field').addEventListener('keyup', function (event) {
+            console.log(event.target.value);
+        })
+
+    </script>
+</body>
+
+</html>
